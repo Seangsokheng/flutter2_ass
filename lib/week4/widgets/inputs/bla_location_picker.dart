@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:week_3_blabla_project/model/ride/locations.dart';
+import 'package:flutter_ass/week4/model/ride/locations.dart';
 
 import '../../service/locations_service.dart';
 import '../../theme/theme.dart';

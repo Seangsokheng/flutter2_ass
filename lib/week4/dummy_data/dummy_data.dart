@@ -187,3 +187,86 @@ List<Ride> fakeRides = List.generate(50, (index) {
     pricePerSeat: pricePerSeat,
   );
 });
+
+final List<Ride> fakeLocationRides = [
+  Ride(
+    departureLocation: fakeLocations.firstWhere((loc) => loc.name == "Battambang"),
+    arrivalLocation: fakeLocations.firstWhere((loc) => loc.name == "Siem Reap"),
+    departureDate: DateTime.now().add(Duration(hours: 5, minutes: 30)),
+    arrivalDateTime: DateTime.now().add(Duration(hours: 7, minutes: 30)), // 2 hours duration
+    driver: User(
+      firstName: "Kannika",
+      lastName: "",
+      email: "kannika@example.com",
+      phone: "+85512345678",
+      profilePicture: "https://randomuser.me/api/portraits/women/10.jpg",
+      verifiedProfile: false,
+    ),
+    availableSeats: 2,
+    pricePerSeat: 10.0,
+  ),
+  Ride(
+    departureLocation: fakeLocations.firstWhere((loc) => loc.name == "Battambang"),
+    arrivalLocation: fakeLocations.firstWhere((loc) => loc.name == "Siem Reap"),
+    departureDate: DateTime.now().add(Duration(hours: 20)),
+    arrivalDateTime: DateTime.now().add(Duration(hours: 22)),
+    driver: User(
+      firstName: "Chaylim",
+      lastName: "",
+      email: "chaylim@example.com",
+      phone: "+85598765432",
+      profilePicture: "https://randomuser.me/api/portraits/men/11.jpg",
+      verifiedProfile: false,
+    ),
+    availableSeats: 0,
+    pricePerSeat: 12.0,
+  ),
+  Ride(
+    departureLocation: fakeLocations.firstWhere((loc) => loc.name == "Battambang"),
+    arrivalLocation: fakeLocations.firstWhere((loc) => loc.name == "Siem Reap"),
+    departureDate: DateTime.now().add(Duration(hours: 5)),
+    arrivalDateTime: DateTime.now().add(Duration(hours: 8)),
+    driver: User(
+      firstName: "Mengtech",
+      lastName: "",
+      email: "mengtech@example.com",
+      phone: "+85511223344",
+      profilePicture: "https://randomuser.me/api/portraits/men/12.jpg",
+      verifiedProfile: false,
+    ),
+    availableSeats: 1,
+    pricePerSeat: 8.0,
+  ),
+  Ride(
+    departureLocation: fakeLocations.firstWhere((loc) => loc.name == "Battambang"),
+    arrivalLocation: fakeLocations.firstWhere((loc) => loc.name == "Siem Reap"),
+    departureDate: DateTime.now().add(Duration(hours: 20)),
+    arrivalDateTime: DateTime.now().add(Duration(hours: 22)),
+    driver: User(
+      firstName: "Limhao",
+      lastName: "",
+      email: "limhao@example.com",
+      phone: "+85522334455",
+      profilePicture: "https://randomuser.me/api/portraits/men/13.jpg",
+      verifiedProfile: true,
+    ),
+    availableSeats: 2,
+    pricePerSeat: 15.0,
+  ),
+  Ride(
+    departureLocation: fakeLocations.firstWhere((loc) => loc.name == "Battambang"),
+    arrivalLocation: fakeLocations.firstWhere((loc) => loc.name == "Siem Reap"),
+    departureDate: DateTime.now().add(Duration(hours: 5)),
+    arrivalDateTime: DateTime.now().add(Duration(hours: 8)),
+    driver: User(
+      firstName: "Sovanda",
+      lastName: "",
+      email: "sovanda@example.com",
+      phone: "+85533445566",
+      profilePicture: "https://randomuser.me/api/portraits/women/14.jpg",
+      verifiedProfile: false,
+    ),
+    availableSeats: 1,
+    pricePerSeat: 9.0,
+  ),
+];

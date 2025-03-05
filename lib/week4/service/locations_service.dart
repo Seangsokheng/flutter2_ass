@@ -12,6 +12,8 @@ class LocationsService {
   // access to the repository
   final LocationsRepository repository;
 
+  static var availableLocations;
+
   //private constructor
   LocationsService._internal(this.repository);
 
