@@ -12,6 +12,13 @@ final Random random = Random();
 
 // Fake Cities
 const List<Location> fakeLocations = [
+  //Cam Cities
+  Location(name: "Phnom Penh", country: Country.cambodia),
+  Location(name: "Siem Reap", country: Country.cambodia),
+  Location(name: "Battambang", country: Country.cambodia),
+  Location(name: "Sihanoukville", country: Country.cambodia),
+  Location(name: "Kampot", country: Country.cambodia),
+
   // UK Cities
   Location(name: "London", country: Country.uk),
   Location(name: "Manchester", country: Country.uk),
