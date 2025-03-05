@@ -19,33 +19,6 @@ void main() {
   //   for (var location in locations) {
   //     print("City: ${location.name}, Country: ${location.country}");
 // }
-RidesService.initialize(MockRidesRepository());
-
-  // Create a test ride preference
-  RidePreference testPreference = RidePreference(
-    departure: fakeLocations[2], // Battambang
-    departureDate: DateTime.now(),
-    arrival: fakeLocations[1], // Siem Reap
-    requestedSeats: 2,
-  );
-
-  // Print rides for the preference with detailed information
-  print("\n---- RIDES FROM BATTAMBANG TO SIEM REAP ----");
-  print("Departure\tArrival\tDate Dep\tDuration\tUser\t\tAccept Pets\tSeats");
-  print("-" * 80);
-
-  final rides = RidesService.instance.getRides(testPreference, null);
-  for (var ride in rides) {
-    print(
-      "${ride.departureLocation.name}\t"
-      "${ride.arrivalLocation.name}\t"
-      "${ride.departureDate.toString().substring(11, 16)}\t"
-      "${ride.arrivalDateTime.difference(ride.departureDate).inHours} hours\t\t"
-      "${ride.driver.firstName}\t\t"
-      "${ride.driver.verifiedProfile ? 'Yes' : 'No'}\t\t"
-      "${ride.availableSeats}"
-    );
-  }
   // 2- Run the UI
   // runApp(const MyApp());
 }

@@ -13,12 +13,15 @@ class MockRidesRepository extends RidesRepository {
     return rides.where((ride) {
       bool matchesLocation =
           ride.departureLocation == preference.departure &&
-          ride.arrivalLocation == preference.arrival;
+          ride.arrivalLocation == preference.arrival &&
+          ride.availableSeats >= preference.requestedSeats;
 
       // Apply pet filter if needed
-      bool matchesPetFilter = 
-          filter == null || 
-          (filter.acceptPets ? ride.driver.verifiedProfile : !ride.driver.verifiedProfile);
+      bool matchesPetFilter =
+          filter == null ||
+          (filter.acceptPets
+              ? ride.driver.verifiedProfile
+              : !ride.driver.verifiedProfile);
 
       return matchesLocation && matchesPetFilter;
     }).toList();
