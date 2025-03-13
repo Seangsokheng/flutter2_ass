@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ass/week4/repository/mock/mock_ride_preferences_repository.dart';
 import 'package:flutter_ass/week4/screens/rides/widgets/ride_pref_bar.dart';
+import 'package:flutter_ass/week4/service/ride_prefs_service.dart';
  
 import '../../dummy_data/dummy_data.dart';
 import '../../model/ride/ride.dart';
@@ -21,10 +23,17 @@ class RidesScreen extends StatefulWidget {
 }
 
 class _RidesScreenState extends State<RidesScreen> {
- 
-  RidePreference currentPreference  = fakeRidePrefs[0];   // TODO 1 :  We should get it from the service
 
-  List<Ride> get matchingRides => RidesService.getRidesFor(currentPreference);
+late RidePreference currentPreference;   // TODO 1 :  We should get it from the service
+
+@override
+void initState() {
+  super.initState();
+  RidePrefService.initialize(MockRidePreferencesRepository());
+  currentPreference = fakeRidePrefs[0];
+}
+
+  List<Ride> get matchingRides => RidesService.instance.getRides(currentPreference, null);
 
   void onBackPressed() {
     Navigator.of(context).pop();     //  Back to the previous view
@@ -32,6 +41,8 @@ class _RidesScreenState extends State<RidesScreen> {
 
   void onPreferencePressed() async {
         // TODO  6 : we should push the modal with the current pref
+
+
 
         // TODO 9 :  After pop, we should get the new current pref from the modal 
 
